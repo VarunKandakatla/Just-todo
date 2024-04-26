@@ -19,20 +19,21 @@ app.get('/',(req,res)=>{
     res.status(200).send('Hello from express');
 })
 
-app.get('/:title',(req,res)=>{
-    const task = req.params.title;
-    todoList.push(task);
-    res.status(200).json({message : "Task Added!"});
+app.delete('/del',(req,res)=>{
+    todoList = [];
+    res.send("clear");
 })
 
-app.get('/update/:id',(req,res)=>{
-    todoList[req.params.id] = req.query.Q;
-    res.status(200).send("Updated!");
+app.get('/add',(req,res)=>{
+    for(let i=0;i<10000;i++)
+    {
+        todoList.push(i+1 +". Jai Shree Ram 🚩")
+    }
+
+    res.send();
 })
 
-app.get('/get',(req,res)=>{
-    res.status(200).json({list : todoList});
-})
+
 
 
 // function getTodo()
