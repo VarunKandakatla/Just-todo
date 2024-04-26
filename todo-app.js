@@ -1,9 +1,10 @@
 const express = require('express');
 const app = express();
 const fs = require('fs');
-app.listen(3000);
-app.use(express.json());
 
+app.use(express.json());
+port = process.env.PORT || 3000;
+app.listen(port);
 todoList = [];
 
 getTodo().then((data)=>{
