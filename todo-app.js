@@ -19,13 +19,13 @@ app.get('/',(req,res)=>{
     res.status(200).send('Hello from express');
 })
 
-app.post('/:title',(req,res)=>{
+app.get('/:title',(req,res)=>{
     const task = req.params.title;
     todoList.push(task);
     res.status(200).json({message : "Task Added!"});
 })
 
-app.put('/update/:id',(req,res)=>{
+app.get('/update/:id',(req,res)=>{
     todoList[req.params.id] = req.query.Q;
     res.status(200).send("Updated!");
 })
