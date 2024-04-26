@@ -15,6 +15,10 @@ app.get('/todos',(req,res)=>{
     res.status(200).json({Todos : todoList});
 })
 
+app.get('/',(req,res)=>{
+    res.status(200).send('Hello from express');
+})
+
 app.get('/:title',(req,res)=>{
     const task = req.params.title;
     todoList.push(task);
